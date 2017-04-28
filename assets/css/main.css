@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#captcha {
+  width: 500px;
+  height: 300px;
+  margin: auto;
+  background-color: #871828;
+}
+
+#captcha-code {
+  width: 460px;
+  height: 120px;
+  background-color: white;
+  position: relative;
+  top: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 80px;
+}
+
+#captcha div, #input-code {
+  margin: 10px;
+}
+
+#input-code {
+  width: 250px;
+  height: 120px;
+  float: left;
+  position: relative;
+  left: 5px;
+  bottom: 0px;
+  background-color: #F9E777;
+  border-style: none;
+  font-size: 50px;
+}
+
+#captcha-logo {
+  display: inline-block;
+  background-color: #fff;
+  float: right;
+  width: 30%;
+}
+
+img {
+  width: 100%;
+}
+
+#captcha-icons {
+
+  width: 10px;
+  height: 150px;
+  bottom: 0;
+  display: inline-block;
+}
