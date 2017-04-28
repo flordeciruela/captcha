@@ -1,3 +1,4 @@
+var appCaptcha = document.getElementById('captcha');
 var captchaCode = document.getElementById('captcha-code');
 var inputCode= document.getElementById('input-code');
 var captchas = ["A6FT48W","86GH3DK","R0TH3N7","P4UN7V2"];
@@ -11,16 +12,20 @@ window.addEventListener('load',function(event) {
 });
 
 load.addEventListener('click',function(event) {
+	event.preventDefault();
 	var getCaptcha = Math.floor(Math.random() * captchas.length);
 	captchaCode.innerText = captchas[getCaptcha];
 	colorAleatorio();
 });
 
 enter.addEventListener('click',function(event) {
+	event.preventDefault();
 	if (inputCode.value == captchaCode.innerText) {
 		alert("Validaciòn exitosa!");
+		appCaptcha.reset();
 	} else {
 		alert("Captcha incorrecto, intente nuevamente.");
+		appCaptcha.reset();
 	}
 });
 
