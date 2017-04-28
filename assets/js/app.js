@@ -7,11 +7,13 @@ var enter = document.getElementById('enter');
 window.addEventListener('load',function(event) {
 	var getCaptcha = Math.floor(Math.random() * captchas.length);
    captchaCode.innerText = captchas[getCaptcha];
+	 colorAleatorio()
 });
 
 load.addEventListener('click',function(event) {
 	var getCaptcha = Math.floor(Math.random() * captchas.length);
 	captchaCode.innerText = captchas[getCaptcha];
+	colorAleatorio();
 });
 
 enter.addEventListener('click',function(event) {
@@ -21,3 +23,12 @@ enter.addEventListener('click',function(event) {
 		alert("Captcha incorrecto, intente nuevamente.");
 	}
 });
+
+function colorAleatorio() {
+    var letras = "0123456789ABCDEF";
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letras[Math.floor(Math.random() * 16)];
+    }
+		captchaCode.style.color=color;
+}
