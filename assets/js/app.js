@@ -6,15 +6,13 @@ var load = document.getElementById('load');
 var enter = document.getElementById('enter');
 
 window.addEventListener('load',function(event) {
-	var getCaptcha = Math.floor(Math.random() * captchas.length);
-   captchaCode.innerText = captchas[getCaptcha];
-	 colorAleatorio()
+	generarCaptcha();
+	colorAleatorio();
 });
 
 load.addEventListener('click',function(event) {
 	event.preventDefault();
-	var getCaptcha = Math.floor(Math.random() * captchas.length);
-	captchaCode.innerText = captchas[getCaptcha];
+	generarCaptcha();
 	colorAleatorio();
 });
 
@@ -24,7 +22,7 @@ enter.addEventListener('click',function(event) {
 		alert("Validaciòn exitosa!");
 		appCaptcha.reset();
 	} else {
-		alert("Captcha incorrecto, intente nuevamente.");
+		alert("Error: ingresar código de la imagen (distingue entre mayúsculas y minúsculas).");
 		appCaptcha.reset();
 	}
 });
@@ -36,4 +34,9 @@ function colorAleatorio() {
         color += letras[Math.floor(Math.random() * 16)];
     }
 		captchaCode.style.color=color;
+}
+
+function generarCaptcha() {
+	var nuevoCaptcha = Math.floor(Math.random() * captchas.length);
+	captchaCode.innerText = captchas[nuevoCaptcha];
 }
